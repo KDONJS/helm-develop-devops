@@ -1,6 +1,6 @@
 image:
   repository: cicddevops.azurecr.io/api-test-develop
-  tag: v1
+  tag: v2
   pullPolicy: IfNotPresent
 
 service:
