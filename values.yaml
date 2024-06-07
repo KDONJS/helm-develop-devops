@@ -7,13 +7,12 @@ service:
   type: LoadBalancer
   port: 443
 
-ingress:
-  enabled: true
-  className: ""
-  annotations: {}
-  hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls: []
+serviceAccount:
+  create: true
+  name: ""
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80

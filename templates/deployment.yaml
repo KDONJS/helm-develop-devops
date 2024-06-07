@@ -14,6 +14,7 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
+      serviceAccountName: {{ .Values.serviceAccount.name | default .Release.Name }}
       containers:
         - name: api-test-develop
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
